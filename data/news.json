@@ -1,0 +1,6 @@
+[
+  {"id":1,"category":"tech","title":"Mis primeros pasos con AWS Academy","date":"2026-09-10","content":"En AWS Academy aprendí qué es la nube y cómo se organizan sus servicios. Fue mi primer acercamiento a la infraestructura que usan las empresas hoy."},
+  {"id":2,"category":"tech","title":"Kali Linux en VirtualBox: mi primer laboratorio","date":"2026-09-24","content":"Armé un entorno seguro con Kali Linux dentro de VirtualBox para practicar ciberseguridad sin riesgos para mi computador."},
+  {"id":3,"category":"carrera","title":"De Python a Java: mi primer semestre y segundo semestre ","date":"2026-08-28","content":"Empecé programando en Python y luego pasé a Java. Cambiar de lenguaje me ayudó a entender mejor la lógica detrás del código."},
+  {"id":4,"category":"carrera","title":"Mi primera app con Kotlin","date":"2026-10-08","content":"Creé una app Android básica con Kotlin. Ver mi código funcionando en un celular fue de lo más motivador del semestre."}
+]
