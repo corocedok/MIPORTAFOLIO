@@ -1,0 +1,5 @@
+[
+  {"id":1,"title":"Portafolio personal","description":"Mi portafolio web con React y Bootstrap, con datos cargados desde JSON y pruebas unitarias.","tech":["React","Bootstrap","Karma"],"image":"img/p1.svg","link":"https://github.com/COROCEDOK"},
+  {"id":2,"title":"App Android","description":"Aplicación móvil básica creada en clase con Kotlin y Android Studio.","tech":["Kotlin","Android Studio"],"image":"img/p2.svg","link":"https://github.com/COROCEDOK"},
+  {"id":3,"title":"Laboratorio de ciberseguridad","description":"Entorno de prácticas con Kali Linux en VirtualBox para aprender conceptos básicos de seguridad.","tech":["Kali Linux","VirtualBox"],"image":"img/p3.svg","link":"https://github.com/COROCEDOK"}
+]
