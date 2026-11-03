@@ -2,7 +2,7 @@ import Hero from './Hero';
 import { render } from '../test-utils';
 
 describe('Hero', () => {
-  const props = { name: 'Ana', role: 'Dev', bio: 'Bio de prueba', photo: 'x.svg', github: 'https://github.com/ana' };
+  const props = { name: 'Ana', role: 'Dev', bio: 'Bio de prueba', photo: 'x.svg', github: 'https://github.com/ana', tech: ['Java', 'HTML5'] };
   let ctx;
   beforeEach(async () => { ctx = await render(<Hero {...props} />); });
   afterEach(() => ctx.unmount());
@@ -13,6 +13,10 @@ describe('Hero', () => {
   });
   it('la foto tiene texto alternativo (accesibilidad)', () => {
     expect(ctx.container.querySelector('img').getAttribute('alt')).toBe('Foto de perfil de Ana');
+  });
+  it('lista las tecnologías principales por separado', () => {
+    expect(ctx.container.textContent).toContain('Tecnologías principales');
+    expect(ctx.container.querySelectorAll('.badge-tech').length).toBe(2);
   });
   it('el enlace apunta al GitHub indicado', () => {
     expect(ctx.container.querySelector('a').getAttribute('href')).toBe('https://github.com/ana');

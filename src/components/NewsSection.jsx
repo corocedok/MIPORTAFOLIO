@@ -1,17 +1,19 @@
 import { useState } from 'react';
 import { useJson } from '../hooks/useJson';
 
-/** Sección de noticias cargadas desde JSON, filtradas por categoría. */
-export default function NewsSection({ title, category, url = './data/news.json' }) {
+/** Sección de logros cargados desde JSON. Si se indica `category`, filtra; si no, muestra todos (más recientes primero). */
+export default function NewsSection({ id, title, category, url = './data/news.json' }) {
   const { data, error, loading } = useJson(url);
   const [abierta, setAbierta] = useState(null);
-  const items = (data || []).filter((n) => n.category === category);
+  const items = (data || [])
+    .filter((n) => !category || n.category === category)
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
 
   return (
-    <section className="section container" aria-label={title}>
+    <section id={id} className="section container" aria-label={title}>
       <h2 className="section-title">{title}</h2>
-      {loading && <p role="status">Cargando noticias…</p>}
-      {error && <p role="alert">No se pudieron cargar las noticias.</p>}
+      {loading && <p role="status">Cargando logros…</p>}
+      {error && <p role="alert">No se pudieron cargar los logros.</p>}
       <div className="row g-4">
         {items.map((n) => {
           const expandida = abierta === n.id;

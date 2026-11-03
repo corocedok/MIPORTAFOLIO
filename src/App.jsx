@@ -8,15 +8,16 @@ import ContactForm from './components/ContactForm';
 const perfil = {
   name: 'Camila Corocedo Lorca',
   role: 'Estudiante de Ingeniería en Informática · Duoc UC',
-  bio: 'Estoy en mi primer semestre y ya he trabajado con Python, Java, Kotlin, HTML y CSS, además de AWS Academy y ciberseguridad con Kali Linux. Me gusta aprender construyendo cosas que funcionen y que se vean bien.',
+  bio: 'Estudiante de primer año de Ingeniería en Informática en Duoc UC, con experiencia en desarrollo de aplicaciones web y móviles, fundamentos de computación en la nube (AWS Academy) y prácticas de ciberseguridad con Kali Linux. Orientada a construir soluciones funcionales, bien diseñadas y aprendidas en la práctica.',
   photo: './img/profile.jpg',
   github: 'https://github.com/COROCEDOK',
+  tech: ['Python', 'Java', 'Kotlin', 'HTML5', 'CSS3', 'AWS', 'Kali Linux'],
 };
-const metricas = [['3', 'Proyectos'], ['4', 'Noticias'], ['6', 'Tecnologías']];
+const metricas = [['3', 'Proyectos'], ['4', 'Logros'], [String(perfil.tech.length), 'Tecnologías']];
 
 export default function App() {
   const [menu, setMenu] = useState(false);
-  const links = [['introduccion', 'Introducción'], ['proyectos', 'Proyectos'], ['noticias', 'Noticias'], ['contacto', 'Contacto']];
+  const links = [['introduccion', 'Perfil'], ['proyectos', 'Proyectos'], ['logros', 'Logros'], ['contacto', 'Contacto']];
   return (
     <>
       <a href="#proyectos" className="visually-hidden-focusable">Saltar al contenido</a>
@@ -43,13 +44,15 @@ export default function App() {
           ))}
         </div></section>
         <Projects />
-        <div id="noticias">
-          <NewsSection title="Noticias de tecnología" category="tech" />
-          <NewsSection title="Noticias de mi carrera" category="carrera" />
-        </div>
+        <NewsSection id="logros" title="Logros profesionales" />
         <ContactForm />
       </main>
-      <footer className="footer"><div className="container"><p className="footer-brand">{perfil.name}</p></div></footer>
+      <footer className="footer">
+        <div className="container footer-inner">
+          <p className="mb-1">© {new Date().getFullYear()} {perfil.name}. Todos los derechos reservados.</p>
+          <p className="mb-0 footer-muted">Desarrollado por {perfil.name} · React · Bootstrap · Vite</p>
+        </div>
+      </footer>
     </>
   );
 }

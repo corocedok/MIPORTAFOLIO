@@ -21,11 +21,9 @@ export default function ContactForm({ onSend = () => {} }) {
 
   return (
     <section id="contacto" className="section container">
-      <div className="row g-5">
-        <div className="col-lg-5">
-          <h2 className="section-title">Déjame un mensaje y te respondo pronto.</h2>
-        </div>
-        <div className="col-lg-7">
+      <h2 className="section-title">Contacto</h2>
+      <div className="row">
+        <div className="col-lg-8">
           <form onSubmit={submit} noValidate>
             {['nombre', 'email', 'mensaje'].map((campo) => (
               <div className="mb-3" key={campo}>

@@ -17,6 +17,14 @@ describe('NewsSection', () => {
     expect(ctx.container.textContent).not.toContain('T3');
     ctx.unmount();
   });
+  it('sin categoría muestra todos los logros, del más reciente al más antiguo', async () => {
+    mockFetch(noticias);
+    const ctx = await render(<NewsSection title="Logros" />);
+    await flush();
+    const titulos = [...ctx.container.querySelectorAll('h3')].map((h) => h.textContent);
+    expect(titulos).toEqual(['T3', 'T2', 'T1']);
+    ctx.unmount();
+  });
   it('alterna "Leer más" / "Leer menos" al hacer clic (estado + DOM)', async () => {
     mockFetch(noticias);
     const ctx = await render(<NewsSection title="Tech" category="tech" />);
